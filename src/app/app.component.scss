@@ -1,0 +1,38 @@
+// h1 {
+//     // Set font size, font weight, or any other desired styles
+//     font-size: 54px;
+//     font-weight: bold;
+//     text-align: center;
+    
+//     // Apply linear gradient as font color
+//     background: linear-gradient( #2be647, #dfdf43, blue);
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+//   }
+
+  .pos1{
+    position:fixed;
+    right:20%;
+    top:1%;
+  }
+
+
+// .inline{
+//     display: flex;
+//     // justify-content: space-around;
+//     li{
+//         list-style: none;
+//         padding:10px;
+//         // border:2px solid black;
+//     }
+// }
+.example-card {
+    max-width: 400px;
+    background: blue;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  

@@ -1,0 +1,24 @@
+<ng-container *ngIf="boredActivity$ | async as boredActivity">
+  <mat-dialog-content>
+    <p>{{ boredActivity.activity }}</p>
+    <!-- <p>{{ boredActivity.type }}</p> -->
+    <button mat-raised-button color="accent">
+      {{ boredActivity.type | uppercase }}
+    </button>
+    &nbsp; <button mat-raised-button color="accent">Participants</button>&nbsp;
+    <button mat-fab color="primary">{{ boredActivity.participants }}</button>
+    <!-- <p>Participants: </p> -->
+    <!-- <mat-slider
+      [(ngModel)]="numberOfParticipants"
+      min="1"
+      max="5"
+      *ngIf="toggle"
+    ></mat-slider> -->
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="logSliderValue()">Get Another idea</button>
+    <button mat-button (click)="addToNotes(boredActivity)">Add as Note</button>
+    <button mat-button [mat-dialog-close]="0">Cancel</button>
+  </mat-dialog-actions>
+</ng-container>
+  
