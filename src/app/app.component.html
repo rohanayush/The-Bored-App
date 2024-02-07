@@ -32,30 +32,20 @@
   <div *ngFor="let note of fetchedData$ | async">
     <div class="card">
       <h2>{{ note.activity }}</h2>
-
-      <button mat-button color="warn" mat-stroked-button (click)="removeItem(note.key)">
-        Remove
-      </button>
       <mat-chip-set aria-label="Participants Info">
-        <mat-chip color="primary">
+        <mat-chip class="shadow" color="primary">
           <span> Participants {{ note.participants }} </span>
         </mat-chip>
       </mat-chip-set>
+      <button
+        mat-button
+        color="warn"
+        class="btn-shadow"
+        mat-stroked-button
+        (click)="removeItem(note.key)"
+      >
+        Remove
+      </button>
     </div>
   </div>
 </div>
-
-<!-- <app-snackbar-notifications
-  [message]="'Disco party!'"
-  [action]="'Dance'"
-></app-snackbar-notifications> -->
-
-<!-- <mat-form-field>
-  <mat-label>Message</mat-label>
-  <input matInput value="Disco party!" #message>
-</mat-form-field>
-
-<mat-form-field>
-  <mat-label>Action</mat-label>
-  <input matInput value="Dance" #action>
-</mat-form-field> -->
