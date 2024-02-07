@@ -21,7 +21,7 @@ export const fetchAddedActivity = createSelector(
 // export const addActivityNote = createFeatureSelector<AppState>('added');
 export const selectError = createSelector(
     selectBoringActivity,
-    (state: AppState) => state.error
+    (state: AppState) => state.message
   );
 
   export const selectAddedItems = createSelector(

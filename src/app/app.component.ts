@@ -29,21 +29,18 @@ export class AppComponent {
     const storedData = localStorage.getItem('addedNotes');
     if (storedData) {
       const parsedData: BoredActivity[] = JSON.parse(storedData);
-      // Dispatch an action to replace the added data in the state
       this.store.dispatch(replaceAddedActivity({ data: parsedData }));
     }
     this.fetchedData$ = this.store.pipe(select(fetchAddedActivity));
     this.fetchedDataSubscription = this.fetchedData$.subscribe((data) => {
-      // Store the data in local storage
       localStorage.setItem('addedNotes', JSON.stringify(data));
     });
   }
 
   constructor(public dialog: MatDialog, private store: Store<AppState>) {
     this.boredActivity$ = this.store.pipe(select(selectBoredActivity));
-    this.store.dispatch(fetchAddedData());
+    // this.store.dispatch(fetchAddedData());
   }
-
 
   openParticipantDialog() {
     if (this.boredActivity$) {
@@ -57,7 +54,6 @@ export class AppComponent {
   }
 
   removeItem(key: string): void {
-    this.store.dispatch(removeItem({key:key}));
+    this.store.dispatch(removeItem({ key: key }));
   }
-  
 }

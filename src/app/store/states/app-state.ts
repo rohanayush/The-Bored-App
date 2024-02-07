@@ -11,6 +11,6 @@ export interface BoredActivity {
   export interface AppState {
     boredActivity: BoredActivity | null;
     added:BoredActivity[] ,
-    error: string | null; 
+    message: string | null; 
   }
   

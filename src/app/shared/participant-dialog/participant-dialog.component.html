@@ -1,24 +1,32 @@
 <ng-container *ngIf="boredActivity$ | async as boredActivity">
   <mat-dialog-content>
-    <p>{{ boredActivity.activity }}</p>
-    <!-- <p>{{ boredActivity.type }}</p> -->
-    <button mat-raised-button color="accent">
-      {{ boredActivity.type | uppercase }}
-    </button>
-    &nbsp; <button mat-raised-button color="accent">Participants</button>&nbsp;
-    <button mat-fab color="primary">{{ boredActivity.participants }}</button>
-    <!-- <p>Participants: </p> -->
-    <!-- <mat-slider
-      [(ngModel)]="numberOfParticipants"
-      min="1"
-      max="5"
-      *ngIf="toggle"
-    ></mat-slider> -->
+    <h2>{{ boredActivity.activity }}</h2>
+    <mat-chip-set aria-label="Dog selection">
+      <mat-chip>
+        <span> Domain - {{ boredActivity.type | uppercase }} </span>
+      </mat-chip>
+      <mat-chip color="primary">
+        <span> Participants {{ boredActivity.participants }} </span>
+      </mat-chip>
+    </mat-chip-set>
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-button (click)="logSliderValue()">Get Another idea</button>
-    <button mat-button (click)="addToNotes(boredActivity)">Add as Note</button>
-    <button mat-button [mat-dialog-close]="0">Cancel</button>
+    <button
+      class="font10"
+      mat-raised-button
+      color="primary"
+      (click)="logSliderValue()"
+    >
+      Get Another idea
+    </button>
+    <button
+      class="font10"
+      mat-raised-button
+      color="accent"
+      (click)="addToNotes(boredActivity)"
+    >
+      Add as Note
+    </button>
+    <button class="font10" mat-button [mat-dialog-close]="0">Cancel</button>
   </mat-dialog-actions>
 </ng-container>
-  

@@ -16,7 +16,7 @@ import {
 export const initialState: AppState = {
   boredActivity: null,
   added: [],
-  error:''
+  message:''
 };
 
 export const activityReducer = createReducer(
@@ -24,7 +24,7 @@ export const activityReducer = createReducer(
   on(BoringActions.fetchActivitySuccess, (state, { response }) => ({
     ...state,
     boredActivity: response,
-    error:''
+    message:''
   })),
   on(addToNotes, (state, { activity }) => {
     // Check if the key already exists in the added array
@@ -35,14 +35,14 @@ export const activityReducer = createReducer(
       return {
         ...state,
         added: [...state.added, activity],
-        error:''
+        message:''
       };
     } else {
       // If the key already exists, return the state with an error message
       const errorMessage = 'Note already exists!';
       return {
         ...state,
-        error: errorMessage
+        message: errorMessage
       };
     }
   }),
@@ -50,12 +50,12 @@ export const activityReducer = createReducer(
     ...state,
     // Return the data from the 'added' property
     fetchedData: state.added,
-    error:''
+    message:''
   })),
   on(replaceAddedActivity, (state, { data }) => ({
     ...state,
     added: data,
-    error:''
+    message:''
   })),
   on(removeItem, (state, { key }) => ({
     ...state,

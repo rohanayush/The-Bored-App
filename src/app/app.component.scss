@@ -1,38 +1,79 @@
-// h1 {
-//     // Set font size, font weight, or any other desired styles
-//     font-size: 54px;
-//     font-weight: bold;
-//     text-align: center;
-    
-//     // Apply linear gradient as font color
-//     background: linear-gradient( #2be647, #dfdf43, blue);
-//     -webkit-background-clip: text;
-//     -webkit-text-fill-color: transparent;
+* {
+  // border:1px solid red;
+}
+
+.pos1 {
+  position: fixed;
+  right: 20%;
+  top: 1%;
+}
+
+.card {
+  // box-shadow: 1px 1px grey;
+  // height: 200px;
+  width: 90%; /* Adjust the width for 4 cards per row */
+  // padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  padding-top: 10px;
+  padding-left: 10px;
+  // box-shadow: 1px 1px 5px 0px silver;
+  // box-shadow: 1px 1px 5px 0px silver;
+  // background: #61DDA0;
+  border-radius: 12px;
+  gap: 30px;
+  transition: transform 0.3s ease;
+  &:hover {
+    box-shadow: 0px 5px 10px 0px #69f0ae;
+  }
+  .on-hover {
+    display: none; /* Initially hide the content */
+    transition: opacity 1.3s ease;
+    opacity: 0;
+  }
+
+  &:hover .on-hover {
+    display: flex; /* Show the content when card is hovered */
+    align-items: start;
+    opacity: 1;
+    // padding-top: 5px;
+    // padding-left: 10px;
+  }
+}
+
+
+.fix {
+  position: fixed;
+  width: 100vw;
+  z-index: 99;
+}
+//   .inner-container{
+//     margin-top: 20px;
 //   }
+.gap {
+  height: 100px;
+}
+.mr {
+  margin-right: 20px;
+}
 
-  .pos1{
-    position:fixed;
-    right:20%;
-    top:1%;
-  }
+.boiler-plate {
+  width: 90vw;
+  height: 30vh;
+  box-shadow: 1px 1px 5px 0px #7b1fa2;
+  border-radius: 12px;
+  color: rgb(149, 146, 146);
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left:10px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-
-// .inline{
-//     display: flex;
-//     // justify-content: space-around;
-//     li{
-//         list-style: none;
-//         padding:10px;
-//         // border:2px solid black;
-//     }
-// }
-.example-card {
-    max-width: 400px;
-    background: blue;
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
-  

@@ -20,7 +20,10 @@ import { activityReducer } from './store/reducers/boring-reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MatListModule } from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [AppComponent, ParticipantDialogComponent],
@@ -28,7 +31,6 @@ import {MatCardModule} from '@angular/material/card';
     BrowserModule,
     MatDialogModule,
     CommonModule,
-    MatSliderModule,
     FormsModule,
     MatButtonModule,
     MatToolbarModule,
@@ -37,8 +39,10 @@ import {MatCardModule} from '@angular/material/card';
     StoreModule.forRoot({ boredActivity: activityReducer }),
     EffectsModule.forRoot([ActivityEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25 }) ,
-    MatListModule,
-    MatCardModule
+    MatChipsModule,
+    MatInputModule,
+    MatFormFieldModule
+
   ],
   providers: [
     provideRouter(routes), // Provide the router
