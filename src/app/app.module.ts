@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ParticipantDialogComponent } from './shared/participant-dialog/participant-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog'; // Import MatDialogModule
@@ -24,6 +24,7 @@ import {MatChipsModule} from '@angular/material/chips';
 
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [AppComponent, ParticipantDialogComponent],
@@ -41,7 +42,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     StoreDevtoolsModule.instrument({ maxAge: 25 }) ,
     MatChipsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
 
   ],
   providers: [
