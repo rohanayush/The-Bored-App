@@ -42,7 +42,7 @@ export class AppComponent {
     // this.store.dispatch(fetchAddedData());
   }
 
-  openParticipantDialog() {
+  openParticipantDialog() { 
     if (this.boredActivity$) {
       const dialogRef = this.dialog.open(ParticipantDialogComponent);
 
