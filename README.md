@@ -1,4 +1,7 @@
-# Youth
+<<<<<<< HEAD
+# The Boring App
+This angular app can be used to collect ideas and provide pwa support as well, so that it can be downloaded and pinned as an app in your device.
+This uses Angular Material, rxjs and NGRX store and effects for state management.   
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
 
@@ -25,3 +28,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+# The-Bored-App
+Angular application that uses getting bored api to find ideas that can be added as note using ngrx state
+>>>>>>> 44282eb (Initial commit)
