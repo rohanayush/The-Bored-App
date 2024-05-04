@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 # The Boring App
-This angular app can be used to collect ideas and provide pwa support as well, so that it can be downloaded and pinned as an app in your device.
+This angular app can be used to collect ideas.
 This uses Angular Material, rxjs and NGRX store and effects for state management.   
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
