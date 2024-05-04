@@ -33,7 +33,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     MatToolbarModule,
     MatIconModule,
     HttpClientModule,
-    StoreModule.forRoot({ activity: activityReducer }),
+    StoreModule.forRoot({ boredActivity: activityReducer }),
     EffectsModule.forRoot([ActivityEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25 }) ,
     MatChipsModule,
