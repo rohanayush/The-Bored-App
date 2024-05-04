@@ -41,7 +41,7 @@ export class ParticipantDialogComponent {
     this.store.dispatch(addToNotes({ activity: boredActivity }));
   }
 
-  logSliderValue() {
+  getIdeas() {
     this.store.dispatch(fetchActivity());
     console.log('Number of Participants:', this.numberOfParticipants);
   }

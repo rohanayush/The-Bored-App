@@ -52,8 +52,8 @@ export class ActivityEffects {
   addToNotesSnackbar$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(addToNotes, fetchActivity), // Listen for both addToNotes and fetchActivity actions
-        withLatestFrom(this.store.pipe(select((state: any) => state))), // Combine with the boredActivity state
+        ofType(addToNotes, fetchActivity), 
+        withLatestFrom(this.store.pipe(select((state: any) => state))), 
         tap(([action, state]) => {
           const message = state.boredActivity.message;
           if (message === '') {
@@ -65,6 +65,8 @@ export class ActivityEffects {
       ),
     { dispatch: false }
   );
+
+
   fetchActivitySnackbar$ = createEffect(
     () =>
       this.actions$.pipe(
@@ -73,6 +75,8 @@ export class ActivityEffects {
       ),
     { dispatch: false }
   );
+
+  
   fetchAddedSnackbar$ = createEffect(
     () =>
       this.actions$.pipe(

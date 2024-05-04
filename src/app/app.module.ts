@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { ParticipantDialogComponent } from './shared/participant-dialog/participant-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog'; // Import MatDialogModule
 import { CommonModule } from '@angular/common';
-import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
@@ -18,10 +17,7 @@ import { StoreModule } from '@ngrx/store';
 import { ActivityEffects } from './store/effects/boring-effects';
 import { activityReducer } from './store/reducers/boring-reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { MatListModule } from '@angular/material/list';
-import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
-
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -37,7 +33,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     MatToolbarModule,
     MatIconModule,
     HttpClientModule,
-    StoreModule.forRoot({ boredActivity: activityReducer }),
+    StoreModule.forRoot({ activity: activityReducer }),
     EffectsModule.forRoot([ActivityEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25 }) ,
     MatChipsModule,
