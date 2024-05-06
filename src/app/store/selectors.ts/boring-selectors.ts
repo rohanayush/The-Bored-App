@@ -1,30 +1,25 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { AppState, BoredActivity } from '../states/app-state';
-import { fetchAddedData } from '../actions/boring-action';
+import { AppState } from '../states/app-state';
 
 // Select the entire feature state
-export const selectBoringActivity = createFeatureSelector<AppState>('boredActivity');
-// export const addedActivity = createFeatureSelector<AppState>('added');
+export const selectBoringActivity =
+  createFeatureSelector<AppState>('boredActivity');
 
-// Select the boredActivity property from the feature state
+// Select the boredActivity property from the state
+// .ie, the recently added/fetched idea/activity
 export const selectBoredActivity = createSelector(
   selectBoringActivity,
   (state: AppState) => state.boredActivity
 );
 
+// To just get the values from added property in state
 export const fetchAddedActivity = createSelector(
-    selectBoringActivity,
-    (state: AppState) => state.added
-  );
+  selectBoringActivity,
+  (state: AppState) => state.added
+);
 
-// for error
-// export const addActivityNote = createFeatureSelector<AppState>('added');
+// for error , ie, to get value of message from state
 export const selectError = createSelector(
-    selectBoringActivity,
-    (state: AppState) => state.message
-  );
-
-  export const selectAddedItems = createSelector(
-    selectBoringActivity,
-    state => state.added
-  );
+  selectBoringActivity,
+  (state: AppState) => state.message
+);

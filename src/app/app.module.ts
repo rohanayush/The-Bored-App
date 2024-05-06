@@ -33,12 +33,26 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     MatToolbarModule,
     MatIconModule,
     HttpClientModule,
+    // Here we register the state reducer, as reducer manages the state
+    // state would be with property 'boredActivity' and store:
+    /**
+      boredActivity:{
+        boredActivity:{},
+        added:[],
+        message:"string"
+      }
+     */
     StoreModule.forRoot({ boredActivity: activityReducer }),
+
+    // effects registered
     EffectsModule.forRoot([ActivityEffects]),
+
+    // for checking the state in chrome devtools
     StoreDevtoolsModule.instrument({ maxAge: 25 }) ,
     MatChipsModule,
     MatInputModule,
     MatFormFieldModule,
+    // this is for pwa purpose
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
