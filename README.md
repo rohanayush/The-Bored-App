@@ -29,14 +29,11 @@ NgRx is a Redux-inspired state management library for Angular. Here's a brief ov
 To run the development server:
 1. Ensure you have [Node.js](https://nodejs.org/) and Angular CLI installed.
 2. Clone this repository: `git clone <repository-url>`.
-3. Navigate to the project directory: `cd boring-app`.
+3. Navigate to the project directory: `cd the-bored-app`.
 4. Install the dependencies: `npm install`.
 5. Run `ng serve`.
 6. Open `http://localhost:4200/` in your browser to view the app.
 
 The application will automatically reload if you change any source files.
 
-## Code Scaffolding
-To generate a new component, service, or other Angular entities, use the Angular CLI:
-```bash
-ng generate component my-new-component
+
